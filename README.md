@@ -21,3 +21,9 @@ PropsWriter: commit=ReactRevisionMerge tag=10 source rawProps: nativeID=yes back
 ```
 
 With the flag off, the view is created in React's own commit, from the clone that kept the node's raw props.
+
+On a RedMagic NX809J (Android 16), release builds of this commit:
+
+| `-PcommitBranching=false` | flag on |
+| --- | --- |
+| <img src="screenshots/commit-branching-off.png" width="360"> | <img src="screenshots/commit-branching-on.png" width="360"> |
