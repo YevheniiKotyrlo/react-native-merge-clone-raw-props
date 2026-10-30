@@ -10,6 +10,7 @@ A reproducer on React Native's nightly of `main` (`0.89.0-nightly-20261030-4afc5
 2. `cd android && ./gradlew assembleRelease -PreactNativeArchitectures=arm64-v8a`
 3. `adb install -r app/build/outputs/apk/release/app-release.apk`, launch the app, and read `adb logcat -s PropsWriter`.
 4. Repeat steps 2 and 3 with `-PcommitBranching=false`.
+5. Repeat steps 2 and 3 with `-PaccumulatedRawProps=true`, which also turns on `enableAccumulatedUpdatesInRawPropsAndroid`: each clone then keeps its source's raw props, and the box shows.
 
 **Expected** (as with `-PcommitBranching=false`): the red box shows, and the view has its `nativeID` and `testID`.
 

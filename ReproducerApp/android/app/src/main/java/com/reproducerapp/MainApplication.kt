@@ -31,6 +31,9 @@ class MainApplication : Application(), ReactApplication {
       ReactNativeFeatureFlags.dangerouslyForceOverride(
         object : ReactNativeFeatureFlagsProvider by ReactNativeFeatureFlagsOverrides_RNOSS_Stable_Android() {
           override fun enableFabricCommitBranching(): Boolean = true
+
+          // Build with -PaccumulatedRawProps=true to keep every clone's raw props merged with its source's.
+          override fun enableAccumulatedUpdatesInRawPropsAndroid(): Boolean = BuildConfig.ACCUMULATED_RAW_PROPS
         }
       )
     }
