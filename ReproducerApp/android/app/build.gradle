@@ -84,6 +84,15 @@ android {
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
         versionName "1.0"
+        buildConfigField "boolean", "COMMIT_BRANCHING", (project.findProperty("commitBranching") ?: "true").toString()
+    }
+    buildFeatures {
+        buildConfig true
+    }
+    externalNativeBuild {
+        cmake {
+            path "src/main/jni/CMakeLists.txt"
+        }
     }
     signingConfigs {
         debug {
